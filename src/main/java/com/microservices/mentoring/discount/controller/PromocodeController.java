@@ -14,6 +14,7 @@ public class PromocodeController {
 
     @GetMapping("/promocode/{code}")
     public String getDiscountByPromocode(@PathVariable String code) {
+        System.out.println("Searching for promocode: " + code);
         return promocodeService.getDiscount(code).toPlainString();
     }
 }

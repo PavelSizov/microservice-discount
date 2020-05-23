@@ -16,6 +16,7 @@ public class PromocodeService {
     public BigDecimal getDiscount(String code) {
         Promocode promocode = promocodeRepository.getPromocode(code);
         if (promocode == null) {
+            System.out.println("Promocode [" + code + "] not found");
             return BigDecimal.ZERO;
         }
         return promocode.getDiscount();
