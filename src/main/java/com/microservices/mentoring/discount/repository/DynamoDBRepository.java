@@ -29,7 +29,7 @@ public class DynamoDBRepository {
 
     public <T> T findPromocode(Class<T> clazz, String code) {
         T result = mapper.load(clazz, code, DynamoDBMapperConfig.builder()
-                .withTableNameOverride(DynamoDBMapperConfig.TableNameOverride.withTableNameReplacement(tableName)));
+                .withTableNameOverride(DynamoDBMapperConfig.TableNameOverride.withTableNameReplacement(tableName)).build());
         return result;
     }
 
